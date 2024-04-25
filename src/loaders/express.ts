@@ -4,6 +4,7 @@ import passport from 'passport';
 import { xss } from 'express-xss-sanitizer';
 import mongoSanitize from 'express-mongo-sanitize';
 import authRouter from '../routes/auth.route';
+import taskRouter from '../routes/task.route';
 import ApiError from '../utils/ApiError';
 import { jwtStrategy } from '../config/passport';
 
@@ -20,6 +21,7 @@ export default async function setup(app: Application): Promise<Application> {
  
 
   app.use(authRouter);
+  app.use(taskRouter);
   app.use((req: Request, res: Response, next: NextFunction) => {
     next(new ApiError(httpStatus.NOT_FOUND, 'Not found'));
   });
