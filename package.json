@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-xss-sanitizer": "^1.2.0",
+    "http-status": "^1.7.4",
+    "joi": "^17.13.0",
+    "mongoose": "^8.3.2",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "process": "^0.11.10",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7"
+  }
+}
