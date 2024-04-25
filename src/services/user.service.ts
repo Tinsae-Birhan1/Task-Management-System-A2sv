@@ -22,10 +22,22 @@ const getUserById = async (id: string): Promise<any> => {
   return user;
 };
 
+
+
+
+const updateUser = async (id, updateData) => {
+  return await User.findByIdAndUpdate(id, updateData, { new: true });
+};
+
+const deleteUser = async (id) => {
+  return await User.findByIdAndDelete(id);
+};
 const userService = {
   createUser,
   getUserByEmail,
   getUserById,
+  updateUser,
+  deleteUser
 };
 
 export default userService;

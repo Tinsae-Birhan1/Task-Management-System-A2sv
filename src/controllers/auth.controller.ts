@@ -29,12 +29,35 @@ const refreshToken = catchAsync(async (req, res) => {
   });
   
 
-
+  const createUser = catchAsync(async (req, res) => {
+    const user = await userService.createUser(req.body);
+    res.status(201).send(user);
+  });
+  
+  const getUserById = catchAsync(async (req, res) => {
+    const user = await userService.getUserById(req.params.id);
+    res.status(200).send(user);
+  });
+  
+  const updateUser = catchAsync(async (req, res) => {
+    const user = await userService.updateUser(req.params.id, req.body);
+    res.status(200).send(user);
+  });
+  
+  const deleteUser = catchAsync(async (req, res) => {
+    await userService.deleteUser(req.params.id);
+    res.status(204).send();
+  });
+  
 
 const authController = {
     register,
     login,
     refreshToken,
+    createUser,
+  getUserById,
+  updateUser,
+  deleteUser,
   };
   
   export default authController;

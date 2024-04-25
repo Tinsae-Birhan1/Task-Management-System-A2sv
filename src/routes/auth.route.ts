@@ -18,4 +18,20 @@ router.post(
   '/auth/refresh-token',
   authController.refreshToken as RequestHandler,
 );
+router.post(
+  '/users', 
+authController.createUser
+);
+router.get(
+  '/users/:id', 
+  authController.getUserById
+);
+router.put(
+  '/users/:id', 
+  authController.updateUser
+);
+router.delete(
+  '/users/:id', authController.deleteUser
+);
+
 export default router;
